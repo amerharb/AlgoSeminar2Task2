@@ -56,16 +56,17 @@ public class Task2
             l = new CircularDoubleLinkedList();
 
             for (int i = 0; i < n; i++) {
-                l.add(new Person("P: " + i));
+                l.add(new Person("P: " + (i + 1)));
             }
-
+            l.next(); // return the pointer to the first person added
+            System.out.println("start from "+  l.peek().name);
             while (l.size() > 1) {
                 for (int i = 0; i < m; i++) {
                     l.next();
                 }
-                l.remove();
+                System.out.println("Element " + l.remove().name);
             }
-            System.out.println(l.peek().name);
+            System.out.println("last one remain" + l.peek().name);
         }
     }
 
