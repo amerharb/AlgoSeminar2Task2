@@ -28,6 +28,7 @@ public class Task2
             System.out.println("Enter the Value of M");
             System.out.print("M=");
             ans = sc.nextLine();
+            if (ans.toLowerCase().contains("exit")){break;}
             int M;
             try {
                 M = Integer.parseInt(ans);
@@ -39,6 +40,7 @@ public class Task2
             System.out.println("Enter the Value of N");
             System.out.print("N=");
             ans = sc.nextLine();
+            if (ans.toLowerCase().contains("exit")){break;}
             int N;
             try {
                 N = Integer.parseInt(ans);
