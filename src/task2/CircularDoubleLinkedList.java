@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package task2;
 
-/**
- *
- * @author Amer
- */
 public class CircularDoubleLinkedList<E>
 {
 
@@ -23,15 +14,15 @@ public class CircularDoubleLinkedList<E>
     private static class Node<E>
     {
 
+        Node<E> prev;
         E item;
         Node<E> next;
-        Node<E> prev;
 
         Node(Node<E> prev, E element, Node<E> next)
         {
+            this.prev = prev;
             this.item = element;
             this.next = next;
-            this.prev = prev;
         }
     }
 
@@ -43,29 +34,32 @@ public class CircularDoubleLinkedList<E>
             curNode.prev = curNode;
         } else {
             Node<E> newNode = new Node(curNode, item, curNode.next);
-            curNode.next = newNode;
             curNode.next.prev = newNode;
+            curNode.next = newNode;
             curNode = newNode;
         }
         size++;
     }
 
-    public boolean remove()
+    public E remove()
     {
         if (curNode != null) {
+            Node<E> delNode;
             if (curNode.next == curNode) { //then its the last item in list
+                delNode = curNode;
                 curNode = null;
                 size = 0;
             } else {
                 curNode.prev.next = curNode.next;
                 curNode.next.prev = curNode.prev;
+                delNode = curNode;
                 curNode = curNode.next;
                 size--;
             }
-            return true;
+            return delNode.item;
 
         } else {
-            return false;
+            return null;
         }
     }
 
