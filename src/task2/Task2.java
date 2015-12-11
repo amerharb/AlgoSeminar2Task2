@@ -1,20 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package task2;
 
-/**
- *
- * @author Amer
- */
 public class Task2
 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args)
     {
         while (true) {
@@ -28,10 +16,12 @@ public class Task2
             System.out.println("Enter the Value of M");
             System.out.print("M=");
             ans = sc.nextLine();
-            if (ans.toLowerCase().contains("exit")){break;}
-            int M;
+            if (ans.toLowerCase().contains("exit")) {
+                break;
+            }
+            int m;
             try {
-                M = Integer.parseInt(ans);
+                m = Integer.parseInt(ans);
             } catch (Exception e) {
                 System.out.println("Invalid input");
                 continue;
@@ -40,17 +30,42 @@ public class Task2
             System.out.println("Enter the Value of N");
             System.out.print("N=");
             ans = sc.nextLine();
-            if (ans.toLowerCase().contains("exit")){break;}
-            int N;
+            if (ans.toLowerCase().contains("exit")) {
+                break;
+            }
+            int n;
             try {
-                N = Integer.parseInt(ans);
+                n = Integer.parseInt(ans);
             } catch (Exception e) {
                 System.out.println("Invalid input");
                 continue;
             }
 
-            System.out.println(M);
-            System.out.println(N);
+            class Person
+            {
+
+                final String name;
+
+                public Person(String name)
+                {
+                    this.name = name;
+                }
+            }
+
+            CircularDoubleLinkedList<Person> l;
+            l = new CircularDoubleLinkedList();
+
+            for (int i = 0; i < n; i++) {
+                l.add(new Person("P: " + i));
+            }
+
+            while (l.size() > 1) {
+                for (int i = 0; i < m; i++) {
+                    l.next();
+                }
+                l.remove();
+            }
+            System.out.println(l.peek().name);
         }
     }
 
