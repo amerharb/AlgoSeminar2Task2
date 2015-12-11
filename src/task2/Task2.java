@@ -28,12 +28,24 @@ public class Task2
             System.out.println("Enter the Value of M");
             System.out.print("M=");
             ans = sc.nextLine();
-            int M = Integer.parseInt(ans);
+            int M;
+            try {
+                M = Integer.parseInt(ans);
+            } catch (Exception e) {
+                System.out.println("Invalid input");
+                continue;
+            }
 
             System.out.println("Enter the Value of N");
             System.out.print("N=");
             ans = sc.nextLine();
-            int N = Integer.parseInt(ans);
+            int N;
+            try {
+                N = Integer.parseInt(ans);
+            } catch (Exception e) {
+                System.out.println("Invalid input");
+                continue;
+            }
 
             System.out.println(M);
             System.out.println(N);
