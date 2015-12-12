@@ -1,9 +1,11 @@
 package task2;
 
+import com.sun.management.GarbageCollectionNotificationInfo;
+
 public class CircularDoubleLinkedList<E>
 {
 
-    private Node<E> curNode;
+    private Node<E> curNode; //Current Node ((from this is object we know almost everything about this List))
     private int size = 0;
 
     public int size()
@@ -61,6 +63,12 @@ public class CircularDoubleLinkedList<E>
         } else {
             return null;
         }
+    }
+
+    public void clear()
+    {
+        curNode = null;
+        size = 0;
     }
 
     public E next()
