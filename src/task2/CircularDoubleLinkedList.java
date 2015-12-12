@@ -84,4 +84,9 @@ public class CircularDoubleLinkedList<E>
     {
         return curNode.item;
     }
+
+    public boolean isEmpty()
+    {
+        return curNode == null;
+    }
 }
