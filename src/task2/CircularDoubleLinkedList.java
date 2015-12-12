@@ -1,7 +1,5 @@
 package task2;
 
-import com.sun.management.GarbageCollectionNotificationInfo;
-
 public class CircularDoubleLinkedList<E>
 {
 
