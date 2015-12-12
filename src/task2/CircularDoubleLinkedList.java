@@ -49,8 +49,7 @@ public class CircularDoubleLinkedList<E>
             Node<E> delNode;
             if (curNode.next == curNode) { //then its the last item in list
                 delNode = curNode;
-                curNode = null;
-                size = 0;
+                clear();
             } else {
                 curNode.prev.next = curNode.next;
                 curNode.next.prev = curNode.prev;
